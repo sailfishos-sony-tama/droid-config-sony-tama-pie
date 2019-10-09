@@ -1,0 +1,28 @@
+Description: Pattern with packages for i3113 configurations
+Name: jolla-configuration-h8216
+Requires:
+- pattern:jolla-hw-adaptation-akari
+
+- droid-config-h8216-sailfish
+- droid-config-h8216-pulseaudio-settings
+- droid-config-h8216-policy-settings
+- droid-config-h8216-preinit-plugin
+- droid-config-h8216-flashing
+- droid-config-h8216-bluez5
+- droid-hal-version-h8216
+
+- patterns-sailfish-applications
+- patterns-sailfish-ui
+- patterns-sailfish-cellular-apps
+
+- sailfish-content-graphics-z@ICON_RES@
+
+- jolla-settings-system-nfc
+- jolla-settings-system-flashlight
+
+- geoclue-provider-mlsdb
+- csd
+- mapplauncherd-booster-silica-qt5-media
+
+Summary: Jolla Configuration h8216
+
