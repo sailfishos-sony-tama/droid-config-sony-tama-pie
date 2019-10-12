@@ -24,5 +24,8 @@ Requires:
 - csd
 - mapplauncherd-booster-silica-qt5-media
 
+- patterns-sailfish-consumer-generic
+- pattern:sailfish-porter-tools
+
 Summary: Jolla Configuration h8216
 
