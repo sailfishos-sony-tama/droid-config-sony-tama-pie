@@ -1,0 +1,11 @@
+[Unit]
+Description=Grab logs after boot and before shutdown
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/root/logs.sh boot
+ExecStop=/root/logs.sh shutdown
+
+[Install]
+WantedBy=multi-user.target
