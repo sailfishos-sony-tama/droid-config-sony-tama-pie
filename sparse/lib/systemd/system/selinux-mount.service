@@ -1,0 +1,13 @@
+# Has to be script as systemd refuses to mount /sys/fs/selinux
+# as a regular mount.
+
+[Unit]
+Description=Mount SELinux
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/bin/mount -t selinuxfs none /sys/fs/selinux
+
+[Install]
+WantedBy=local-fs.target
