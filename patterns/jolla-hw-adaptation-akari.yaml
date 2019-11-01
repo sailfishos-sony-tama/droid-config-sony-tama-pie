@@ -65,8 +65,8 @@ Requires:
 # enable device lock and allow to select untrusted software
 - jolla-devicelock-daemon-encsfa
 
-# Enable home encryption
-- sailfish-device-encryption
+## Enable home encryption
+#- sailfish-device-encryption
 
 # For GPS
 - geoclue-provider-hybris
@@ -74,11 +74,11 @@ Requires:
 # For suspend to work with enabled Wi-Fi on newer Qualcomm devices
 - sailfish-connman-plugin-suspend
 
-# SELinux related
-- libselinux-utils
-- libselinux-utils-extra
-- setools
-- policycoreutils
+## SELinux related
+#- libselinux-utils
+#- libselinux-utils-extra
+#- setools
+#- policycoreutils
 
 Summary: Jolla HW Adaptation akari
 
