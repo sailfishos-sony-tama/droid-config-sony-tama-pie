@@ -3,6 +3,7 @@ Name: jolla-hw-adaptation-akari
 Requires:
 - droid-hal-akari
 - droid-hal-akari-img-boot
+- droid-hal-akari-img-dtbo
 - droid-hal-akari-img-recovery
 - droid-hal-akari-tools
 
