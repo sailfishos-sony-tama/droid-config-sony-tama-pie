@@ -2,3 +2,5 @@ part / --fstype="ext4" --size=2000 --label=root
 part /home --fstype="ext4" --size=800 --label=home
 part /fimage --fstype="ext4" --size=10 --label=fimage
 part /opt --fstype="ext4" --size=850 --label=vendor
+
+repo --name=adaptation-community-h8216-extra-images-@RELEASE@ --baseurl=http://repo.merproject.org/obs/nemo:/devel:/hw:/sony:/h8216:/extra-images/aosp_9.0.0_r46/
