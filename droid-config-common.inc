@@ -1,4 +1,4 @@
-%define rpm_vendor qualcomm
+%define rpm_vendor sony
 %define vendor sony
 %define vendor_pretty Sony
 
