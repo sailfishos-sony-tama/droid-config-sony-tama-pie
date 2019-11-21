@@ -20,6 +20,8 @@ Requires: droid-hal-%{device}-tools
 Requires: libhybris-libEGL
 Requires: libhybris-libGLESv2
 Requires: libhybris-libwayland-egl
+Requires: libhybris-libOpenCL
+Requires: libhybris-libvibrator
 
 # Bluetooth
 Requires: bluebinder
@@ -110,6 +112,7 @@ Requires: vim-enhanced
 Requires: zypper
 Requires: strace
 Requires: jolla-rnd-device
+Requires: libhybris-tests
 # End sailfish-porter-tools
 
 # 3rd party accounts like Twitter, VK, cloud services, etc
