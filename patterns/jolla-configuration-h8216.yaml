@@ -1,0 +1,5 @@
+Description: Dummy pattern to keep scripts happy
+Name: jolla-configuration-h8216
+Requires:
+- dummy-package
+Summary: Jolla Dummy Configuration h8216
