@@ -140,8 +140,8 @@ if [ -z ${SAILFISH_IMAGE_PATH} ]; then
 fi
 
 IMAGES=(
-"boot_a ${SAILFISH_IMAGE_PATH}hybris-boot.img"
-"boot_b ${SAILFISH_IMAGE_PATH}hybris-boot.img"
+"boot ${SAILFISH_IMAGE_PATH}hybris-boot.img"
+"dtbo ${SAILFISH_IMAGE_PATH}dtbo.img"
 "userdata ${SAILFISH_IMAGE_PATH}sailfish.img001"
 "system_b ${SAILFISH_IMAGE_PATH}fimage.img001"
 "vendor_a ${SAILFISH_IMAGE_PATH}vendor.img001"
@@ -183,7 +183,7 @@ if [ -z ${BLOB_BIN_PATH} ]; then
 fi
 
 BLOBS=""
-for b in $(ls -1 ${BLOB_BIN_PATH}/*_v9_ganges.img 2>/dev/null); do
+for b in $(ls -1 ${BLOB_BIN_PATH}/*_v9_tama.img 2>/dev/null); do
   if [ -n "$BLOBS" ]; then
    echo; echo More than one supported Sony Vendor image was found in this directory.
    echo Please remove any additional files.
@@ -198,10 +198,10 @@ if [ -z $BLOBS ]; then
   echo Please download it from
   echo https://developer.sony.com/develop/open-devices/downloads/software-binaries/
   echo Ensure you download the supported version of the image found under:
-  echo '"Software binaries for AOSP Pie (Android 9.0) - Kernel 4.9 - Ganges"'
+  echo '"Software binaries for AOSP Pie (Android 9.0) - Kernel 4.9 - Tama"'
   echo and unzip it into this directory.
-  echo Note: information on which versions are supported is written in our Sailfish X
-  echo installation instructions online https://jolla.com/sailfishxinstall
+  echo Note: information on which versions are supported is written in our Sailfish
+  echo installation instructions online https://github.com/sailfishos-sony-tama/main
   echo
   exit 1
 fi
@@ -214,6 +214,9 @@ done
 
 echo "Flashing oem partition.."
 $FLASHCMD oem_a $BLOBS
+
+echo "Flashing vbmeta partition..."
+$FLASHCMD --disable-verity --disable-verification flash vbmeta ${SAILFISH_IMAGE_PATH}vbmeta.img
 
 echo
 echo "Flashing completed."
