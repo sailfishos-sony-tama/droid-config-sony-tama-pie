@@ -1,4 +1,4 @@
-%include rpm/header-h8216.inc
+%include rpm/header-h8266.inc
 %define device_pretty Xperia XZ2
 
 %include droid-config-common.inc

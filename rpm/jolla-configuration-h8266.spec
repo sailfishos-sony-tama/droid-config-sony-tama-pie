@@ -1,4 +1,4 @@
-%include rpm/header-h8216.inc
+%include rpm/header-h8266.inc
 
 Name: jolla-configuration-%{rpm_device}
 Summary: Jolla Configuration %{rpm_device}

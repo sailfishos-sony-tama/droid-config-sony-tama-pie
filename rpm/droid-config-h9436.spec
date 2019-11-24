@@ -1,5 +1,5 @@
-%include rpm/header-h8216.inc
-%define device_pretty Xperia XZ2
+%include rpm/header-h9436.inc
+%define device_pretty Xperia XZ3
 
 %include droid-config-common.inc
 %define community_adaptation 1

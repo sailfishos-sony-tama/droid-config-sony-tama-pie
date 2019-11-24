@@ -152,9 +152,21 @@ FILES="flash* *.img* *.exe *.dll *-release"
 if [ "@DEVICEMODEL@" = "h8216" ]; then
   sed -e "s/\@DEVICES\@/\-e \"H8216\"/g" -i flash.sh
   sed -e "s/\@DEVICES\@/:: H8216/g" -i flash-on-windows.bat
-#elif [ "@DEVICEMODEL@" = "i3213" ]; then
-#  sed -e "s/\@DEVICES\@/\-e \"I3213\" -e \"I3223\"/g" -i flash.sh
-#  sed -e "s/\@DEVICES\@/:: I3213\r\n:: I3223/g" -i flash-on-windows.bat
+elif [ "@DEVICEMODEL@" = "h8266" ]; then
+  sed -e "s/\@DEVICES\@/\-e \"H8266\" -e \"H8266\"/g" -i flash.sh
+  sed -e "s/\@DEVICES\@/:: H8266\r\n:: H8266/g" -i flash-on-windows.bat
+elif [ "@DEVICEMODEL@" = "h8314" ]; then
+  sed -e "s/\@DEVICES\@/\-e \"H8314\" -e \"H8314\"/g" -i flash.sh
+  sed -e "s/\@DEVICES\@/:: H8314\r\n:: H8314/g" -i flash-on-windows.bat
+elif [ "@DEVICEMODEL@" = "h8324" ]; then
+  sed -e "s/\@DEVICES\@/\-e \"H8324\" -e \"H8324\"/g" -i flash.sh
+  sed -e "s/\@DEVICES\@/:: H8324\r\n:: H8324/g" -i flash-on-windows.bat
+elif [ "@DEVICEMODEL@" = "h8416" ]; then
+  sed -e "s/\@DEVICES\@/\-e \"H8416\" -e \"H8416\"/g" -i flash.sh
+  sed -e "s/\@DEVICES\@/:: H8416\r\n:: H8416/g" -i flash-on-windows.bat
+elif [ "@DEVICEMODEL@" = "h9436" ]; then
+  sed -e "s/\@DEVICES\@/\-e \"H9436\" -e \"H9436\"/g" -i flash.sh
+  sed -e "s/\@DEVICES\@/:: H9436\r\n:: H9436/g" -i flash-on-windows.bat
 fi
 
 mkdir -p ${RELEASENAME}
