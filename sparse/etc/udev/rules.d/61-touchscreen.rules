@@ -5,3 +5,6 @@ KERNEL=="event*", SUBSYSTEM=="input", ATTRS{name}=="clearpad", ACTION=="add", TE
 
 # akatsuki
 KERNEL=="event*", SUBSYSTEM=="input", ATTRS{name}=="touch_dev", ACTION=="add", TEST!="/dev/touchscreen", SYMLINK+="touchscreen"
+
+# apollo
+KERNEL=="event*", SUBSYSTEM=="input", ATTRS{name}=="synaptics_tcm_touch", ACTION=="add", TEST!="/dev/touchscreen", SYMLINK+="touchscreen"
