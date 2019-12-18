@@ -8,3 +8,6 @@ License: BSD-3-Clause
 Source: %{name}-%{version}.tar.gz
 
 %include jolla-configuration-tama.inc
+
+# For multi-SIM devices
+Requires: jolla-settings-networking-multisim
