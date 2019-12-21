@@ -211,7 +211,7 @@ echo "Flashing oem partition.."
 $FLASHCMD oem_a $BLOBS
 
 echo "Flashing vbmeta partition..."
-$FLASHCMD --disable-verity --disable-verification flash vbmeta ${SAILFISH_IMAGE_PATH}vbmeta.img
+$FASTBOOTCMD --disable-verity --disable-verification flash vbmeta ${SAILFISH_IMAGE_PATH}vbmeta.img
 
 echo
 echo "Flashing completed."
