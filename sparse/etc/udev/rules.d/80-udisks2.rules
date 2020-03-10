@@ -41,9 +41,9 @@ ENV{ID_VENDOR}=="*IOMEGA*", ENV{ID_MODEL}=="*ZIP*", ENV{ID_DRIVE_FLOPPY_ZIP}="1"
 # kind of media is - right now we just assume SD
 KERNEL=="mmcblk[0-9]", SUBSYSTEMS=="mmc", ENV{DEVTYPE}=="disk", ENV{ID_DRIVE_FLASH_SD}="1", ENV{ID_DRIVE_MEDIA_FLASH_SD}="1"
 
-# Match sda1 to mmcblk1 both of DEVTYPE==disk and SUBSYSTEM=="block"
-KERNEL=="mmcblk1*", SUBSYSTEM=="block", ENV{DEVTYPE}=="disk",  ENV{ID_DRIVE_FLASH_SD}="1", ENV{ID_DRIVE_MEDIA_FLASH_SD}="1"
-KERNEL=="mmcblk1*", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", ACTION=="add", MODE="0660", TAG+="systemd", ENV{SYSTEMD_WANTS}="mount-sd@%k.service"
+# Match mmcblk0 both of DEVTYPE==disk and SUBSYSTEM=="block"
+KERNEL=="mmcblk0*", SUBSYSTEM=="block", ENV{DEVTYPE}=="disk",  ENV{ID_DRIVE_FLASH_SD}="1", ENV{ID_DRIVE_MEDIA_FLASH_SD}="1"
+KERNEL=="mmcblk0*", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", ACTION=="add", MODE="0660", TAG+="systemd", ENV{SYSTEMD_WANTS}="mount-sd@%k.service"
 
 # ditto for memstick
 KERNEL=="msblk[0-9]|mspblk[0-9]", SUBSYSTEMS=="memstick", ENV{DEVTYPE}=="disk", ENV{ID_DRIVE_FLASH_MS}="1", ENV{ID_DRIVE_MEDIA_FLASH_MS}="1"
