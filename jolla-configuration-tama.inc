@@ -74,8 +74,12 @@ Requires: usb-moded
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 Requires: rfkill
 
-# enable device lock and allow to select untrusted software
-Requires: jolla-devicelock-daemon-encsfa
+# Fingerprint
+Requires: sailfish-fpd-community
+Requires: sailfish-fpd-community-test
+
+# Use screenlock supporting FPD
+Requires: sailfish-devicelock-fpd
 
 ## Enable home encryption
 #Requires: sailfish-device-encryption
