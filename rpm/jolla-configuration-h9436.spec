@@ -7,6 +7,9 @@ Release: 1
 License: BSD-3-Clause
 Source: %{name}-%{version}.tar.gz
 
+# For fingerprint on XZ3
+Requires: droid-fake-crypt
+
 # For multi-SIM devices
 Requires: jolla-settings-networking-multisim
 
