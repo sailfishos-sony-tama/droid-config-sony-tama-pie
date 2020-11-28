@@ -60,6 +60,7 @@ Requires: gstreamer1.0-plugins-bad
 Requires: nemo-gstreamer1.0-interfaces
 # For devices with droidmedia and gst-droid built, see HADK pdf for more information
 Requires: gstreamer1.0-droid
+Requires: gmp-droid
 
 # either LD_PRELOAD libcameraservice is required or this (for camera):
 Requires: audioflingerglue
