@@ -1,4 +1,4 @@
-Requires: droid-config-%{rpm_device}-sailfish
+Requires: droid-config-%{rpm_device}-sailfish = %{version}-%{release}
 Requires: droid-config-%{rpm_device}-pulseaudio-settings
 Requires: droid-config-%{rpm_device}-policy-settings
 Requires: droid-config-%{rpm_device}-preinit-plugin
@@ -131,4 +131,8 @@ Requires: jolla-settings-accounts-extensions-3rd-party-all
 
 %description
 Meta package to install packages for %{rpm_device} configurations
+
+%post
+systemctl restart mce || true
+
 %files
