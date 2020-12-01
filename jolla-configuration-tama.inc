@@ -1,4 +1,4 @@
-Requires: droid-config-%{rpm_device}-sailfish = %{version}-%{release}
+Requires: droid-config-%{rpm_device}-sailfish >= %{version}
 Requires: droid-config-%{rpm_device}-pulseaudio-settings
 Requires: droid-config-%{rpm_device}-policy-settings
 Requires: droid-config-%{rpm_device}-preinit-plugin
