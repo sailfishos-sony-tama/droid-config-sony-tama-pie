@@ -63,7 +63,10 @@ Requires: gstreamer1.0-droid
 Requires: gmp-droid
 
 # either LD_PRELOAD libcameraservice is required or this (for camera):
-Requires: audioflingerglue
+#Requires: audioflingerglue
+
+# For camera dummy audioflinger is needed
+Requires: audiosystem-passthrough-dummy-af
 
 # This is needed for notification LEDs
 Requires: mce-plugin-libhybris
@@ -76,11 +79,14 @@ Requires: usb-moded
 Requires: rfkill
 
 # Fingerprint
-Requires: sailfish-fpd-community
-Requires: sailfish-fpd-community-test
+#Requires: sailfish-fpd-community
+#Requires: sailfish-fpd-community-test
 
 # Use screenlock supporting FPD
-Requires: sailfish-devicelock-fpd
+#Requires: sailfish-devicelock-fpd
+
+# Without FPD: enable device lock and allow to select untrusted software
+Requires: jolla-devicelock-daemon-encsfa
 
 ## Enable home encryption
 #Requires: sailfish-device-encryption
