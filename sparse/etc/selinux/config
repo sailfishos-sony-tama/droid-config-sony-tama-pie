@@ -1,3 +1,0 @@
-SELINUX=disabled
-SELINUXTYPE=minimum
-AUTORELABEL=1
