@@ -68,6 +68,9 @@ Requires: gmp-droid
 # For camera dummy audioflinger is needed
 Requires: audiosystem-passthrough-dummy-af
 
+# For Tama: camera requires audiopolicy service
+Requires: miniaudiopolicy
+
 # This is needed for notification LEDs
 Requires: mce-plugin-libhybris
 
