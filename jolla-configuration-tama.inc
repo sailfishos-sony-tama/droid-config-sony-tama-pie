@@ -100,6 +100,9 @@ Requires: geoclue-provider-hybris
 # For suspend to work with enabled Wi-Fi on newer Qualcomm devices
 Requires: sailfish-connman-plugin-suspend
 
+# Splash screen
+Requires: yamuisplash
+
 # general patterns
 Requires: patterns-sailfish-applications
 Requires: patterns-sailfish-ui
