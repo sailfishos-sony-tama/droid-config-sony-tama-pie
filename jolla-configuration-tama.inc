@@ -1,7 +1,3 @@
-# transition from older packaging
-Provides: jolla-configuration-%{rpm_device}
-
-# requirements
 Requires: droid-config-%{rpm_device}-sailfish >= %{version}
 Requires: droid-config-%{rpm_device}-pulseaudio-settings
 Requires: droid-config-%{rpm_device}-policy-settings
