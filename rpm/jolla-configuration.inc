@@ -6,3 +6,8 @@ License: BSD-3-Clause
 Source: %{name}-%{version}.tar.gz
 
 Requires: patterns-sailfish-device-configuration-%{rpm_device}
+
+%description
+Meta package to install packages for %{rpm_device} configurations
+
+%files
