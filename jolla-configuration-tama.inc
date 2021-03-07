@@ -28,6 +28,7 @@ Requires: bluebinder
 
 # Telephony
 Requires: ofono-ril-binder-plugin
+Requires: dummy_netd
 
 # NFC
 Requires: nfcd-binder-plugin
@@ -81,15 +82,15 @@ Requires: usb-moded
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 Requires: rfkill
 
-# Fingerprint
-Requires: sailfish-fpd-community
-Requires: sailfish-fpd-community-test
+## Fingerprint
+#Requires: sailfish-fpd-community
+#Requires: sailfish-fpd-community-test
 
-# Use screenlock supporting FPD
-Requires: sailfish-devicelock-fpd
+## Use screenlock supporting FPD
+#Requires: sailfish-devicelock-fpd
 
 # Without FPD: enable device lock and allow to select untrusted software
-#Requires: jolla-devicelock-daemon-encsfa
+Requires: jolla-devicelock-daemon-encsfa
 
 ## Enable home encryption
 #Requires: sailfish-device-encryption
