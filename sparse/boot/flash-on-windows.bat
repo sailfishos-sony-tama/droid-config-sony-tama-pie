@@ -1,6 +1,6 @@
 @echo off
 
-:: This is simple windows flashing script for Sony Xperia Tama device
+:: This is simple windows flashing script for Sony Xperia 10 device
 :: This script is using fastboot to flash which differs from the factory method.
 
 set tmpflashfile=tmpfile.txt
@@ -33,13 +33,13 @@ call :sleep 3
 @call :md5sum flash-on-windows.bat
 
 set fastbootcmd_no_device=fastboot.exe
-set current_device=
+set products=
 
 echo(
 echo Searching for a compatible device...
 
 :: Ensure that we are flashing right device
-@DEVICES@
+:: @DEVICES@
 
 @call :devices
 
@@ -60,20 +60,16 @@ exit /b 1
 
 :no_error_serialnumbers
 
+for %%d in ( %serialnumbers% ) do (
+  set fastbootcmd=%fastbootcmd_no_device% -s %%d
+  @call :getvar product
+  findstr /R "@DEVICES@" %tmpflashfile% >NUL 2>NUL
+  if not errorlevel 1 (
+    call :new_product_found %%d
+  )
+)
 
-if "%serialnumbers%" == "%serialnumbers: =%" GOTO no_multiple_serialnumbers
-
-echo(
-echo It seems that there are multiple compatible devices connected in fastboot mode.
-echo Make sure only the device that you intend to flash is connected.
-pause
-exit /b 1
-
-:no_multiple_serialnumbers
-
-set current_device=%serialnumbers%
-
-if not [%current_device%] == [] GOTO no_error_product
+if not [%products%] == [] goto :no_error_product 
 
 echo(
 echo The DEVICE this flashing script is meant for WAS NOT FOUND!
@@ -85,8 +81,19 @@ exit /b 1
 
 :no_error_product
 
+if "%products%" == "%products: =%" GOTO :no_multiple_products
+
+echo(
+echo It seems that there are multiple compatible devices connected in fastboot mode.
+echo Make sure only the device that you intend to flash is connected.
+pause
+exit /b 1
+
+
+:no_multiple_products
+
 :: Now we know which device we need to flash
-set fastbootcmd=%fastbootcmd_no_device% -s %current_device%
+set fastbootcmd=%fastbootcmd_no_device% -s %products%
 
 :: Check that device has been unlocked
 @call :getvar secure
@@ -113,7 +120,7 @@ del %tmpflashfile% >NUL 2>NUL
 setlocal EnableDelayedExpansion
 
 :: Find the blob image. Make sure there's only one.
-for /r %%f in (*_v9_tama.img) do (
+for /r %%f in (*_v12a_tama.img) do (
 if not defined blobfilename (
 REM Take only the filename and strip out the path which otherwise is there.
 REM This is to make sure that we do not face issues later with e.g. spaces in the path etc.
@@ -136,7 +143,7 @@ echo Please download it from
 echo %oemblobwebsite%
 echo(
 echo Ensure you download the supported version of the image found under:
-echo "Software binaries for AOSP Pie (Android 9.0) - Kernel 4.9 - Tama"
+echo "Software binaries for AOSP Android 10.0 - Kernel 4.14 - Tama"
 echo and unzip it into this directory.
 echo Note: information on which versions are supported is written in our Sailfish X
 echo installation instructions online.
@@ -159,8 +166,6 @@ echo Found '%blobfilename%' that will be used as vendor image. Continuing..
 @call :fastboot flash dtbo dtbo.img
 @call :fastboot flash system_b fimage.img001
 @call :fastboot flash userdata sailfish.img001
-@call :fastboot flash vendor_a vendor.img001
-@call :fastboot flash vendor_b vendor.img001
 @call :fastboot flash oem_a %blobfilename%
 
 :: NOTE: Do not reboot here as the battery might not be in the device
@@ -190,6 +195,15 @@ if "%serialnumbers%" == "" (
 set serialnumbers=%serialno%
 ) else (
 set "serialnumbers=%serialno% %serialnumbers%"
+)
+@exit /b 0
+
+:new_product_found
+set product=%1
+if "%products%" == "" (
+set products=%product%
+) else (
+set "products=%product% %products%"
 )
 @exit /b 0
 
@@ -250,3 +264,4 @@ set fastbootkillretval=%errorlevel%
 @pause
 @exit 1
 @exit /b 0
+
