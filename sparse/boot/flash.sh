@@ -45,11 +45,6 @@ function check_fastboot {
 
 UNAME=$(uname)
 
-# Do not need root for fastboot on Mac OS X
-if [ "$UNAME" != "Darwin" -a $(id -u) -ne 0 ]; then
-  exec sudo -E bash $0
-fi
-
 OS_VERSION=
 
 FASTBOOT_BIN_PATH=
