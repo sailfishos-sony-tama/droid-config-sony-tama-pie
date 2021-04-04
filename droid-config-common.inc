@@ -24,5 +24,6 @@ Requires: droid-system-%{device}-%{rpm_device}
 #Requires: droid-system-vendor-%{device}-%{rpm_device}
 
 Obsoletes: pulseaudio-modules-droid-glue
+Requires: pulseaudio-modules-droid >= 14.2.89
 
 Requires: libgbinder-tools
