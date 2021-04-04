@@ -63,9 +63,6 @@ Requires: nemo-gstreamer1.0-interfaces
 Requires: gstreamer1.0-droid
 Requires: gmp-droid
 
-# either LD_PRELOAD libcameraservice is required or this (for camera):
-#Requires: audioflingerglue
-
 # For camera dummy audioflinger is needed
 Requires: audiosystem-passthrough-dummy-af
 
@@ -141,8 +138,5 @@ Requires: jolla-settings-accounts-extensions-3rd-party-all
 
 %description
 Meta package to install packages for %{rpm_device} configurations
-
-%post
-systemctl restart mce || true
 
 %files
