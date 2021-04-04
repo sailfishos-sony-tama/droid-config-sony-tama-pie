@@ -32,6 +32,7 @@ Requires: dummy_netd
 
 # NFC
 Requires: nfcd-binder-plugin
+Requires: nfcd-dbuslog-plugin
 
 # Sensors
 Requires: hybris-libsensorfw-qt5
