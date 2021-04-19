@@ -24,7 +24,7 @@ Requires: droid-system-%{device}-%{rpm_device}
 #Requires: droid-system-vendor-%{device}-%{rpm_device}
 
 Obsoletes: pulseaudio-modules-droid-glue
-Requires: pulseaudio-modules-droid >= 14.2.89
+Requires: pulseaudio-modules-droid >= 12.2.89
 Requires: ohm-plugin-accessories >= 1.7.0
 
 Requires: libgbinder-tools
