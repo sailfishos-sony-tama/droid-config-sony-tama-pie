@@ -81,14 +81,14 @@ Requires: usb-moded
 Requires: rfkill
 
 ## Fingerprint
-#Requires: sailfish-fpd-community
-#Requires: sailfish-fpd-community-test
+Requires: sailfish-fpd-community
+Requires: sailfish-fpd-community-test
 
 ## Use screenlock supporting FPD
-#Requires: sailfish-devicelock-fpd
+Requires: sailfish-devicelock-fpd
 
 # Without FPD: enable device lock and allow to select untrusted software
-Requires: jolla-devicelock-daemon-encsfa
+#Requires: jolla-devicelock-daemon-encsfa
 
 ## Enable home encryption
 #Requires: sailfish-device-encryption
