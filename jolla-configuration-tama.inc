@@ -23,6 +23,9 @@ Requires: libhybris-libwayland-egl
 Requires: libhybris-libOpenCL
 Requires: libhybris-libvibrator
 
+# Adaptation repositories
+Requires: community-adaptation
+
 # Bluetooth
 Requires: bluebinder
 
