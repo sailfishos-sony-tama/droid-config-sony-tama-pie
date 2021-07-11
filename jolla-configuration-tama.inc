@@ -113,6 +113,9 @@ Requires: mapplauncherd-booster-silica-qt5-media
 
 Requires: patterns-sailfish-consumer-generic
 
+# CPU and GPU tuning: Sony Tama specific
+Requires: zgovernor
+
 # Early stages of porting benefit from these:
 # On the basis of sailfish-porter-tools
 Requires: jolla-developer-mode
