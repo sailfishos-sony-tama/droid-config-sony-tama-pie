@@ -28,3 +28,6 @@ Requires: pulseaudio-modules-droid >= 12.2.89
 Requires: ohm-plugin-accessories >= 1.7.0
 
 Requires: libgbinder-tools
+
+BuildRequires: community-adaptation
+Requires: community-adaptation
