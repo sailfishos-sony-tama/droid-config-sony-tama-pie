@@ -94,7 +94,7 @@ Requires: sailfish-devicelock-fpd
 #Requires: jolla-devicelock-daemon-encsfa
 
 ## Enable home encryption
-#Requires: sailfish-device-encryption
+Requires: sailfish-device-encryption
 
 # For GPS
 Requires: geoclue-provider-hybris
