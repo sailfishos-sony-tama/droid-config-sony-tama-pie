@@ -21,9 +21,11 @@ fi
 RELEASENAME=${NAME// /_}-${SAILFISH_CUSTOMER// /_}${SAILFISH_CUSTOMER:+-}${EXTRA_NAME// /_}$RND_FLAVOUR${RND_FLAVOUR:+-}$VERSION_ID$DEVICE_ID
 
 # Remove /opt mounting from fstab, systemd will handle it
+# Remove /home mounting from fstab, it is handled through encryption scripts
 mkdir root
 mount -o loop root.img root
 sed -i '/\/opt/d' root/etc/fstab
+sed -i '/\/home/d' root/etc/fstab
 umount root
 rm -rf root
 
