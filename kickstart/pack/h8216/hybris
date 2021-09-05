@@ -91,14 +91,14 @@ echo "Create logical volume ROOT size: $ROOTSIZE"
 /usr/sbin/lvcreate -L ${ROOTSIZE}B --name root sailfish
 
 echo "Create logical volume HOME size: $HOMESIZE"
-/usr/sbin/lvcreate -L ${HOMESIZE}B --name home-open sailfish
+/usr/sbin/lvcreate -L ${HOMESIZE}B --name home_open sailfish
 
 /bin/sync
 /usr/sbin/vgchange -a y sailfish
 
 dd if=root.img bs=$BLOCKSIZE count=$ROOTBLOCKS of=/dev/sailfish/root
 
-dd if=home.img bs=$BLOCKSIZE count=$HOMEBLOCKS of=/dev/sailfish/home-open
+dd if=home.img bs=$BLOCKSIZE count=$HOMEBLOCKS of=/dev/sailfish/home_open
 
 /usr/sbin/vgchange -a n sailfish
 
