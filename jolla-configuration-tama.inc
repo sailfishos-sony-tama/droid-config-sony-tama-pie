@@ -96,6 +96,7 @@ Requires: sailfish-devicelock-fpd
 ## Enable home encryption
 #Requires: sailfish-device-encryption
 Requires: sailfish-device-encryption-community
+Requires: droid-hwcrypt
 
 # For GPS
 Requires: geoclue-provider-hybris
