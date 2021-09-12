@@ -102,12 +102,16 @@ dd if=home.img bs=$BLOCKSIZE count=$HOMEBLOCKS of=/dev/sailfish/home_open
 
 /usr/sbin/vgchange -a n sailfish
 
-pigz -7 root.img && md5sum -b root.img.gz > root.img.gz.md5&
-pigz -7 home.img && md5sum -b home.img.gz > home.img.gz.md5&
-wait
+# Commenting out fimage section and removing unused images
+rm root.img
+rm home.img
 
-ROOTSIZE=$(/bin/ls -l root.img.gz | cut -d ' ' -f5)
-HOMESIZE=$(/bin/ls -l home.img.gz | cut -d ' ' -f5)
+#pigz -7 root.img && md5sum -b root.img.gz > root.img.gz.md5&
+#pigz -7 home.img && md5sum -b home.img.gz > home.img.gz.md5&
+#wait
+
+#ROOTSIZE=$(/bin/ls -l root.img.gz | cut -d ' ' -f5)
+#HOMESIZE=$(/bin/ls -l home.img.gz | cut -d ' ' -f5)
 
 # Temporary dir for making factory image backups.
 #FIMAGE_TEMP=$(mktemp -d -p $(pwd))
@@ -121,10 +125,10 @@ HOMESIZE=$(/bin/ls -l home.img.gz | cut -d ' ' -f5)
 
 #mount -o loop fimage.img $FIMAGE_TEMP
 #mkdir -p $FIMAGE_TEMP/${RELEASENAME}
-mv root.img.gz* $FIMAGE_TEMP/${RELEASENAME}
-mv home.img.gz* $FIMAGE_TEMP/${RELEASENAME}
-umount $FIMAGE_TEMP
-rmdir $FIMAGE_TEMP
+#mv root.img.gz* $FIMAGE_TEMP/${RELEASENAME}
+#mv home.img.gz* $FIMAGE_TEMP/${RELEASENAME}
+#umount $FIMAGE_TEMP
+#rmdir $FIMAGE_TEMP
 
 #/sbin/e2fsck -f -y fimage.img
 #/sbin/resize2fs -f -M fimage.img
