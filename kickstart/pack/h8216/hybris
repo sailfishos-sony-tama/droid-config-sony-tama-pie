@@ -110,28 +110,28 @@ ROOTSIZE=$(/bin/ls -l root.img.gz | cut -d ' ' -f5)
 HOMESIZE=$(/bin/ls -l home.img.gz | cut -d ' ' -f5)
 
 # Temporary dir for making factory image backups.
-FIMAGE_TEMP=$(mktemp -d -p $(pwd))
+#FIMAGE_TEMP=$(mktemp -d -p $(pwd))
 
 # For some reason loop files created by imager don't shrink properly when
 # running resize2fs -M on them. Hence manually growing the loop file here
 # to make the shrinking work once we have the image populated.
-dd if=/dev/zero bs=512 seek=$(/usr/bin/expr \( $ROOTSIZE + $HOMESIZE + 100000000 \) / 512) count=1 of=fimage.img
-/sbin/e2fsck -f -y fimage.img
-/sbin/resize2fs -f fimage.img
+#dd if=/dev/zero bs=512 seek=$(/usr/bin/expr \( $ROOTSIZE + $HOMESIZE + 100000000 \) / 512) count=1 of=fimage.img
+#/sbin/e2fsck -f -y fimage.img
+#/sbin/resize2fs -f fimage.img
 
-mount -o loop fimage.img $FIMAGE_TEMP
-mkdir -p $FIMAGE_TEMP/${RELEASENAME}
+#mount -o loop fimage.img $FIMAGE_TEMP
+#mkdir -p $FIMAGE_TEMP/${RELEASENAME}
 mv root.img.gz* $FIMAGE_TEMP/${RELEASENAME}
 mv home.img.gz* $FIMAGE_TEMP/${RELEASENAME}
 umount $FIMAGE_TEMP
 rmdir $FIMAGE_TEMP
 
-/sbin/e2fsck -f -y fimage.img
-/sbin/resize2fs -f -M fimage.img
+#/sbin/e2fsck -f -y fimage.img
+#/sbin/resize2fs -f -M fimage.img
 
-# To make the file magic right lets convert to single file sparse image.
-/usr/bin/img2simg fimage.img fimage.img001
-rm fimage.img
+## To make the file magic right lets convert to single file sparse image.
+#/usr/bin/img2simg fimage.img fimage.img001
+#rm fimage.img
 
 /sbin/losetup -d $LVM_LOOP
 

@@ -121,6 +121,9 @@ Requires: patterns-sailfish-consumer-generic
 # CPU and GPU tuning: Sony Tama specific
 Requires: zgovernor
 
+# No device reset - dropping fimage
+Provides: jolla-settings-system-reset
+
 # Early stages of porting benefit from these:
 # On the basis of sailfish-porter-tools
 Requires: jolla-developer-mode

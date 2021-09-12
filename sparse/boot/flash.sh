@@ -143,7 +143,6 @@ IMAGES=(
 "boot ${SAILFISH_IMAGE_PATH}hybris-boot.img"
 "dtbo ${SAILFISH_IMAGE_PATH}dtbo.img"
 "userdata ${SAILFISH_IMAGE_PATH}sailfish.img001"
-"system_b ${SAILFISH_IMAGE_PATH}fimage.img001"
 )
 
 if [ "$UNAME" = "Darwin" ] || [ "$UNAME" = "FreeBSD" ]; then

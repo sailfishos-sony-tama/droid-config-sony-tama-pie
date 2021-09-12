@@ -164,7 +164,7 @@ echo Found '%blobfilename%' that will be used as vendor image. Continuing..
 
 @call :fastboot flash boot hybris-boot.img
 @call :fastboot flash dtbo dtbo.img
-@call :fastboot flash system_b fimage.img001
+:: @call :fastboot flash system_b fimage.img001
 @call :fastboot flash userdata sailfish.img001
 @call :fastboot flash oem_a %blobfilename%
 
