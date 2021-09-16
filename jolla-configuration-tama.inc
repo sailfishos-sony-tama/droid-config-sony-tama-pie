@@ -96,6 +96,7 @@ Requires: sailfish-devicelock-fpd
 ## Enable home encryption
 #Requires: sailfish-device-encryption
 Requires: sailfish-device-encryption-community
+Requires: sailfish-device-encryption-community-droid
 Requires: droid-hwcrypt
 
 # For GPS
