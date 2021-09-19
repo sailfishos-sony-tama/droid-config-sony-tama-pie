@@ -38,7 +38,7 @@ Requires: nfcd-binder-plugin
 Requires: nfcd-dbuslog-plugin
 
 # Sensors
-Requires: hybris-libsensorfw-qt5
+Requires: hybris-libsensorfw-qt5-binder
 
 # Vibra
 Requires: ngfd-plugin-native-vibrator
@@ -100,7 +100,7 @@ Requires: sailfish-device-encryption-community-droid
 Requires: droid-hwcrypt
 
 # For GPS
-Requires: geoclue-provider-hybris
+Requires: geoclue-provider-hybris-binder
 
 # For suspend to work with enabled Wi-Fi on newer Qualcomm devices
 Requires: sailfish-connman-plugin-suspend
