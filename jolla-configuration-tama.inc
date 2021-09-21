@@ -152,4 +152,16 @@ Requires: jolla-settings-accounts-extensions-3rd-party-all
 %description
 Meta package to install packages for %{rpm_device} configurations
 
+%post
+if [ ! -f /etc/sailfish-device-encryption-community/config.ini ]; then
+    if /usr/sbin/lvdisplay sailfish/home > /dev/null 2>&1 ; then
+        echo "Converting storage configuration"
+        mkdir -p /etc/sailfish-device-encryption-community
+        (/usr/sbin/lvrename sailfish/home sailfish/home_open && \
+             echo '[home_device]' > /etc/sailfish-device-encryption-community/config.ini && \
+             echo 'state=plain' >> /etc/sailfish-device-encryption-community/config.ini && \
+             sed -i '/\/home/d' /etc/fstab) || echo 'Failed to update to new storage configuration, please reflash'
+    fi
+fi
+
 %files
