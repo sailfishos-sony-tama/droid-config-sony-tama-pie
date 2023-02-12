@@ -143,6 +143,9 @@ Requires: libhybris-tests
 # 3rd party accounts like Twitter, VK, cloud services, etc
 Requires: jolla-settings-accounts-extensions-3rd-party-all
 
+# Waydroid configuration files
+Obsoletes: waydroid-gbinder-config-hybris
+
 ## SELinux related
 #Requires: libselinux-utils
 #Requires: libselinux-utils-extra
